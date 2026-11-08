@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package inventario;
+
+// Contrato del servicio. Tanto el servidor como el cliente se generan/cargan
+// a partir de este archivo, por lo que ambos comparten exactamente los mismos tipos.
+service ProductoService {
+  rpc ObtenerProducto (ProductoRequest) returns (ProductoResponse);
+
+  // Extra: permite completar la fila "Crear producto" de la tabla comparativa.
+  rpc CrearProducto (CrearProductoRequest) returns (ProductoResponse);
+}
+
+message ProductoRequest {
+  int32 id = 1;
+}
+
+message CrearProductoRequest {
+  string nombre = 1;
+  double precio = 2;
+  int32 stock = 3;
+}
+
+message ProductoResponse {
+  int32 id = 1;
+  string nombre = 2;
+  double precio = 3;
+  int32 stock = 4;
+}

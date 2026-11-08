@@ -1,0 +1,15 @@
+{
+    "name": "inventario-grpc",
+    "private": true,
+    "type": "module",
+    "description": "Microservicio gRPC que consulta Laravel a través de su API interna protegida",
+    "scripts": {
+        "server": "node server.js",
+        "client": "node client.js",
+        "comparar": "node comparar.js"
+    },
+    "dependencies": {
+        "@grpc/grpc-js": "^1.14.7",
+        "@grpc/proto-loader": "^0.8.1"
+    }
+}
